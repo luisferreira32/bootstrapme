@@ -16,6 +16,11 @@
         "elementNamePattern": ["**/*.css", "**/*.scss"]
       }
     ],
-    "groups": ["react", ["value-builtin", "type-builtin", "value-external", "type-external"], "unknown", "styles"]
+    "groups": [
+      "react",
+      ["value-builtin", "type-builtin", "value-external", "type-external"],
+      "unknown",
+      "styles"
+    ]
   }
 }
