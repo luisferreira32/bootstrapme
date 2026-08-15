@@ -1,0 +1,17 @@
+version: "2"
+linters:
+  default: all
+  disable:
+    - wsl # deprecated, use wsl_5
+  settings:
+    depguard:
+      rules:
+        prevent_unwanted_packages:
+          files:
+            - "$all"
+          deny:
+            - pkg: "github.com/pkg/errors"
+              desc: "Use standard library 'errors' or 'fmt.Errorf' instead."
+            - pkg: "io/ioutil"
+              desc: "Use 'io' or 'os' packages for Go 1.16+."
+            # add rules as needed

@@ -1,0 +1,21 @@
+{
+  "printWidth": 80,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "sortImports": {
+    "sortSideEffects": true,
+    "newlinesBetween": false,
+    "customGroups": [
+      {
+        "groupName": "react",
+        "elementNamePattern": ["react", "react-**"]
+      },
+      {
+        "groupName": "styles",
+        "elementNamePattern": ["**/*.css", "**/*.scss"]
+      }
+    ],
+    "groups": ["react", ["value-builtin", "type-builtin", "value-external", "type-external"], "unknown", "styles"]
+  }
+}

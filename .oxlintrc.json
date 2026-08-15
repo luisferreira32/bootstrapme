@@ -1,0 +1,40 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "import", "react", "typescript", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "pedantic": "warn",
+    "perf": "warn",
+    "style": "warn",
+    "restriction": "warn",
+    "nursery": "warn"
+  },
+  "rules": {
+    "eslint/capitalized-comments": ["warn", "never"], // we prefer lower case
+    "eslint/max-lines-per-function": "off", // functional components will be large
+    "eslint/no-duplicate-imports": ["allow", { "allowSeparateTypeImports": true }],
+    "import/no-named-export": "off", // prefer named exports
+    "import/no-unassigned-import": ["warn", { "allow": ["**/*.css", "**/*.scss"] }], // styles will never be assigned
+    "import/prefer-default-export": "off", // prefer named exports
+    "one-var": "off", // we prefer one var per line
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+    "react/jsx-max-depth": ["warn", { "max": 7 }],
+    "react/react-in-jsx-scope": "off", // recommended to disable from React 17+
+    "sort-imports": "off" // enforce only sort in formatting
+  },
+  "options": {
+    "typeAware": true,
+    "maxWarnings": 0
+  },
+  "globals": {
+    "document": "readonly"
+  }
+}
