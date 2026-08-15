@@ -13,9 +13,15 @@
   "rules": {
     "eslint/capitalized-comments": ["warn", "never"], // we prefer lower case
     "eslint/max-lines-per-function": "off", // functional components will be large
-    "eslint/no-duplicate-imports": ["allow", { "allowSeparateTypeImports": true }],
+    "eslint/no-duplicate-imports": [
+      "allow",
+      { "allowSeparateTypeImports": true }
+    ],
     "import/no-named-export": "off", // prefer named exports
-    "import/no-unassigned-import": ["warn", { "allow": ["**/*.css", "**/*.scss"] }], // styles will never be assigned
+    "import/no-unassigned-import": [
+      "warn",
+      { "allow": ["**/*.css", "**/*.scss"] }
+    ], // styles will never be assigned
     "import/prefer-default-export": "off", // prefer named exports
     "one-var": "off", // we prefer one var per line
     "react/function-component-definition": [

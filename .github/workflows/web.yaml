@@ -1,0 +1,29 @@
+name: web ci
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/web.yml' # trigger itself
+      - 'src/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'tsconfig.json'
+      - 'tsconfig.app.json'
+      - 'tsconfig.node.json'
+      - 'vite.config.ts'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # 6.0.1
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint web
+        run: pnpm lint
+      - name: Format web
+        run: pnpm fmt --check
